@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 200px auto;
+  width: 400px;
+  height: 600px;
+  padding: 20px;
+  align-items: center;
+  background-color: #f1f1f1;
+  border: red solid 2px;
+  display: grid;
+
+  grid-template-areas:
+    "input input input input"
+    "allClean square . increment"
+    "seven eight nine decrement"
+    "four five six multiply"
+    "one two three divide"
+    "zero zero  point equal";
+}
+
+.input-text {
+  grid-area: input;
+  height: 40px;
+  border: #5f5f5f 2px solid;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+}
+
+.button {
+  border: #f1f1f1 solid 1px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  border: green 2px solid;
+}
+
+.button.button-one {
+  grid-area: one;
+}
+.button.button-two {
+  grid-area: two;
+}
+.button.button-zero {
+  grid-area: zero;
+  width: 170px;
+  height: 80px;
+  border-radius: 40px;
+}
+.button.button-three {
+  grid-area: three;
+}
+.button.button-four {
+  grid-area: four;
+}
+.button.button-five {
+  grid-area: five;
+}
+.button.button-six {
+  grid-area: six;
+}
+.button.button-seven {
+  grid-area: seven;
+}
+.button.button-eight {
+  grid-area: eight;
+}
+.button.button-nine {
+  grid-area: nine;
+}
+.button.button-point {
+  grid-area: point;
+}
+.button.button-multiply {
+  grid-area: multiply;
+  border: blue 2px solid;
+}
+.button.button-divide {
+  grid-area: divide;
+  border: blue 2px solid;
+}
+.button.button-increment {
+  grid-area: increment;
+  border: blue 2px solid;
+}
+.button.button-decrement {
+  grid-area: decrement;
+  border: blue 2px solid;
+}
+.button.button-equal {
+  grid-area: equal;
+  border: blue 2px solid;
+}
+.button.button-allClean {
+  grid-area: allClean;
+  border: blue 2px solid;
+}
+.button.button-square {
+  grid-area: square;
+  border: blue 2px solid;
+}
