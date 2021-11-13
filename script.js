@@ -107,6 +107,7 @@ class Calculator {
         break;
       case "=":
         this.compute();
+        break;
       default:
         this.operation = operation;
         this.previousOperand = this.currentOperand;
@@ -156,8 +157,6 @@ const operationButton = document.querySelectorAll(".button-operation");
 const allClearButton = document.querySelector(".allClean");
 const currentValue = document.querySelector(".input");
 const calculator = new Calculator(currentValue);
-
-// currentValue.value = "0";
 
 numbersButton.forEach((button) => {
   button.addEventListener("click", () => {
