@@ -31,6 +31,7 @@
   border: #5f5f5f 2px solid;
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
+  padding: 0px 0px 0px 15px;
 }
 
 .button-number {
@@ -43,22 +44,23 @@
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
   border: green 2px solid;
+  transition: all 0.2s ease-in-out;
 }
+
 .button-number:hover {
   background-color: #8f8f8f;
-  transition: linear 0.25s;
+  transition: ease-in-out 0.25s;
 }
 .button-operation:hover {
   background-color: #8f8f8f;
-  transition: linear 0.25s;
+  transition: ease-in-out 0.25s;
 }
 
-.button-operation:active {
-  background-color: #5f5f5f;
-}
-
+.button-operation:active,
 .button-number:active {
   background-color: #5f5f5f;
+  transform: scale(0.9, 0.9);
+  font-size: 20px;
 }
 
 .button-operation {
@@ -71,6 +73,7 @@
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
   border: blue 2px solid;
+  transition: 0.3s all ease-in-out;
 }
 
 .button-number.one {

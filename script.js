@@ -59,6 +59,7 @@ class Calculator {
       this.currentOperand = this.currentOperand.toString() + "0";
     }
     if (number === "0" && this.currentOperand === "") {
+      this.currentOperand = "0";
       return;
     }
     if (number === "." && this.currentOperand.includes(".")) {
@@ -69,7 +70,7 @@ class Calculator {
   updateDisplay() {
     this.currentValue.value = this.currentOperand;
     if (this.currentOperand.length == 0) {
-      currentValue.value = "0";
+      this.currentValue.value = "0";
     }
   }
 
@@ -77,26 +78,6 @@ class Calculator {
     this.currentOperand = Math.pow(this.currentOperand, 2);
     this.updateDisplay();
   }
-
-  getDisplayNumber(number) {
-    const stringNumber = number.toString();
-    const integerDigits = parseFloat(stringNumber.split("."[0]));
-    const decimalDigits = stringNumber.split(".")[1];
-    let integerDisplay;
-    if (isNaN(integerDigits)) {
-      integerDisplay = "";
-    } else {
-      integerDisplay = integerDigits.toLocaleString("en", {
-        maximumFractionDigits: 0,
-      });
-      if (decimalDigits != null) {
-        return `${integerDigits}`;
-      } else {
-        return integerDisplay;
-      }
-    }
-  }
-
   chooseOperation(operation) {
     switch (operation) {
       case "^2":
@@ -117,8 +98,12 @@ class Calculator {
 
   compute() {
     let computation;
+
+    console.log(this.operation);
+
     const previous = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
+    console.log(this.currentOperand);
 
     if (isNaN(previous) || isNaN(current)) return;
     switch (this.operation) {
@@ -139,7 +124,8 @@ class Calculator {
         computation = previous * current;
         break;
       case "/":
-        computation = previous / current;
+        console.log(this.operation);
+        computation = current != 0 ? previous / current : "error";
         break;
       default:
         return;
